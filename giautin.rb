@@ -100,7 +100,7 @@ class Decode
 	def initialize(link)
 		@link = link
 		@thongdiep = ""
-		@quocdanh = ""
+		@nguyencongminh = ""
 		@pixel_list = []
 		@image 
 
@@ -127,7 +127,7 @@ class Decode
 		
 		for i in 1..(@thongdiep.length/8) 
 			word = @thongdiep[0,8] # bat dau tu vi tri 0 , lay 8 phan tu (string)
-			@quocdanh = @quocdanh + word.to_i(2).chr # 8 bit binary -> integer -> ASCII 
+			@nguyencongminh = @nguyencongminh + word.to_i(2).chr # 8 bit binary -> integer -> ASCII 
 			@thongdiep = @thongdiep[8..@thongdiep.length] # bo di phan da lay
 		end
 	end
@@ -150,7 +150,7 @@ class Decode
 			 	LayThongDiep(pixel)
 			end
 			GomTu()
-			puts @quocdanh
+			puts @nguyencongminh
 		rescue
 			puts "File not found ! "
 		end
